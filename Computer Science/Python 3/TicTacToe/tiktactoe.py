@@ -1,4 +1,4 @@
 class ttt:
 
-    def ttt_board():
-        
+    def welcome():
+        print("Hey! Welcome to the game board. /n ")
