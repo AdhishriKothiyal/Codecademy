@@ -1,2 +1,4 @@
 class ttt:
-    pass
+
+    def ttt_board():
+        
