@@ -22,7 +22,7 @@ g_board = [" ", " ", " ",
 print("")
 
 # Printing the game board
-def print_board(g_board_num, marker):
+def mark_print_board(g_board_num, marker):
     g_board[g_board_num-1] = marker
     print(" "+g_board[0]+"| "+g_board[1]+" |"+g_board[2])
     print("--|---|--")
@@ -32,7 +32,7 @@ def print_board(g_board_num, marker):
     print("")
 
 #switch player
-def which_playerNmarker(c_player):
+def next_player_marker(c_player):
     if c_player == "A":
         c_player = "B"
         marker = markerB
@@ -69,10 +69,10 @@ def winORtie(c_player, mark):
 
 # win/tie check
 while winner == None:
-    currentplayer, player_mark = which_playerNmarker(currentplayer)
+    currentplayer, player_mark = next_player_marker(currentplayer)
     print("Player " + currentplayer + "'s move. Choose a number from 1-9...")
     user_choice = player_ip()
-    print_board(user_choice, player_mark)
+    mark_print_board(user_choice, player_mark)
     winner = winORtie(currentplayer, player_mark)
 
 if winner == "Tie":
