@@ -53,26 +53,22 @@ def contains(g_board, empty_str):
 
 # win/tie check
 def winORtie(c_player, mark):
-    w = None
-    if(g_board[0] == mark and g_board[1] == mark and g_board[2] == mark):
-        w = c_player
-    elif(g_board[3] == mark and g_board[4] == mark and g_board[5] == mark):
-        w = c_player
-    elif(g_board[6] == mark and g_board[7] == mark and g_board[8] == mark):
-        w = c_player
-    elif(g_board[0] == mark and g_board[3] == mark and g_board[6] == mark):
-        w = c_player
-    elif(g_board[1] == mark and g_board[4] == mark and g_board[7] == mark):
-        w = c_player
-    elif(g_board[2] == mark and g_board[5] == mark and g_board[8] == mark):
-        w = c_player
-    elif(g_board[0] == mark and g_board[4] == mark and g_board[8] == mark):
-        w = c_player
-    elif(g_board[2] == mark and g_board[4] == mark and g_board[6] == mark):
-        w = c_player
-    elif contains(g_board, " ") == False:
-        w = "Tie"
-    return w
+    win_lines = [
+         [0,1,2],
+         [3,4,5],
+         [6,7,8],
+         [0,3,6],
+         [1,4,7],
+         [2,5,8],
+         [0,4,8],
+         [2,4,6]
+    ]
+    for line in win_lines:
+         if (g_board[line[0]] == g_board[line[1]] == g_board[line[2]] == mark):
+              return c_player
+    if (contains(g_board, " ") == False):
+        return "Tie"
+    return None
 
 # win/tie check
 while winner == None:
