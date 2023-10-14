@@ -53,16 +53,13 @@ def contains(g_board, empty_str):
 
 # win/tie check
 def winORtie(c_player, mark):
-    win_lines = [
-         [0,1,2],
-         [3,4,5],
-         [6,7,8],
-         [0,3,6],
-         [1,4,7],
-         [2,5,8],
-         [0,4,8],
-         [2,4,6]
-    ]
+    win_lines = []
+    for i in range(3):
+            win_lines += [[3*i, 3*i+1, 3*i+2]]
+            win_lines += [[i, i+3, i+6]]
+    win_lines += [[0, 4, 8]]
+    win_lines += [[2, 4, 6]]
+
     for line in win_lines:
          if (g_board[line[0]] == g_board[line[1]] == g_board[line[2]] == mark):
               return c_player
