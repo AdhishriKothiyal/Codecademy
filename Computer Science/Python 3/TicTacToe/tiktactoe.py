@@ -5,6 +5,15 @@ markerB = "0"
 currentplayer = "B"
 player_mark = markerB
 user_choice = 0
+print(""" 
+  _______ _        _______           _______         
+ |__   __(_)      |__   __|         |__   __|        
+    | |   _  ___     | | __ _  ___     | | ___   ___ 
+    | |  | |/ __|    | |/ _` |/ __|    | |/ _ \ / _ \\
+    | |  | | (__     | | (_| | (__     | | (_) |  __/
+    |_|  |_|\___|    |_|\__,_|\___|    |_|\___/ \___|
+                                                                                                         
+""")
 print("")
 print("Hey! Welcome to the Tik-Tak-Toe game board.")
 print("")
@@ -16,10 +25,19 @@ print("Player B will be marked as 0")
 print("")
 print("The board has 9 blocks. To make a move each player must select the block number by choosing any number between 1 and 9 (inclusive). Below is a representation of how the game board looks...")
 print("")
+default_g_board = ["1", "2", "3",
+                   "4", "5", "6",
+                   "7", "8", "9"]
 g_board = [" ", " ", " ",
            " ", " ", " ",
            " ", " ", " "]
-print("")
+
+print(" "+default_g_board[0]+"| "+default_g_board[1]+" |"+default_g_board[2])
+print("--|---|--")
+print(" "+default_g_board[3]+"| "+default_g_board[4]+" |"+default_g_board[5])
+print("--|---|--")
+print(" "+default_g_board[6]+"| "+default_g_board[7]+" |"+default_g_board[8])
+print("")     
 
 # Printing the game board
 def print_board(g_board_num, marker):
