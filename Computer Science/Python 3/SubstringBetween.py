@@ -14,16 +14,10 @@ def substring_between_letters(word, start, end):
         substring = ''.join(substring_list)
     return substring
 
-
-
-
 # Uncomment these function calls to test your function:
 print(substring_between_letters("apple", "p", "e"))
-#print(substring_between_letters("missunderstand", "u", "t"))
 # should print "pl"
+print(substring_between_letters("missunderstand", "u", "t"))
+# should print "unders"
 print(substring_between_letters("apple", "p", "c"))
 # should print "apple"
-
-
-#Suggested Solution
-#/* 
