@@ -1,0 +1,1188 @@
+(Codecademy)
+
+- Relational Operator: > =, < =, <, >
+- input() —> to take single input
+- input().split() —> for multiple input
+- Boolean Operator:  and, or, not(reverses boolean value)
+    
+    ***MODULE 3: LISTS***
+    
+- random.randint(1,9) —> will generate a random number between 1 (inclusive) and 9 (inclusive)
+- Multiple data types can be combined in 1 list
+- list.append(value) (adds in the end) [returns none, appends in original list to see the appended list print list (original list)]
+- list.remove(value) (remove function uses value while pop uses index) e.g. alphabets.remove(b)
+- Other Python list. methods
+    
+    ***.count(***what you want to count***)***  - A list method to count the number of occurrences of an element in a list. (returns INT, list.count(what you want to count))
+    ***.insert(index, element)***  - A list method to insert an element into a specific index of a list. (returns NONE) (list.insert(argument1, argument2))
+    ***.pop(index)***     - A list method to remove an element from a specific index or from the end of a list (if no argument is mentioned). (list.pop(index))
+    
+    ***.remove()*** - remove an element from a list by passing in the value of the element to be removed as an argument. In case of two or more elements in the list have the   same value, the first occurrence of the element is removed.
+    ***.range()***  - A built-in Python function to create a sequence of integers. Returns an object.
+    (range_var = range(range. length), to convert to list list(range_var), range(starting, ending),  range(star, end, skip by count)). 
+    
+    - single argument: range(n) → 0 and ending at the number **before** n 
+    - 2 arguments: range(starting, ending),  range(star, end, skip by count)
+    
+    ***len(list_name)***       - A built-in Python function to get the length of a list. (usage: len(list_name))
+    ***.sort()***     - A method and a built-in function to sort a list. (sorts in alphabetical or num order, can also sort in reverse, returns NONE, for reverse sort(reverse=True) (creates a new list)
+    ***sorted()*** - sorted(list_name) (sorts in same list)
+    
+- String Slicing
+    - list[start:end] → prints from index = start till index = end, excludes element at index = end
+    - list[:n] —> to select first n elements in a list, including $n^{th}$ element
+    - list[-n:] —> gives last n elements including -$n^{th}$ element
+- Tuples
+    - data structure that allows us to store multiple data in it
+    - very similar to list but it is immutable (cannot be changed in any way, once created cannot be changed or modified)
+    - eg. my_info = (’Adhishri’, 27, ‘Security Engineer’) (NOTICE THE DIFFERENCE IN BRACKETS, unlike lists tuples have round brackets `( )`)
+    - can be accessed just like list
+    - Unpacking a tuple. (if the number of variables on left = number of elements in tuple on right then variables gets assigned with values in tuple):
+        - name, age, profession = my_info
+        - print(name) ——> output will be Adhishri
+        - print(age) ———> o/p will be 27
+- Combining lists: The Zip Function reference (https://www.programiz.com/python-programming/methods/built-in/zip)
+    - takes in iterables and aggregates them into a tuple and returns it
+    - syntax: `zip(*iterables)`
+    - Parameters: 
+    `iterables`   —>    **can be built-in iterables (like: list, string, dict), or user-defined iterables**
+    - If we wanted to create a nested list that paired each name with a height, we could use the built-in function **`zip()`**
+    eg:
+    
+    ```python
+    names = ["Jenny", "Alexus", "Sam", "Grace"]
+    heights = [61, 70, 67, 64]
+    names_and_heights = zip(names, heights)
+    converted_list = list(names_and_heights)
+    print(converted_list)
+    
+    Output:
+    [('Jenny', 61), ('Alexus', 70), ('Sam', 67), ('Grace', 64)]
+    ```
+    
+- Notice two things:
+    1. Our data set has been converted from a zip memory object to an actual list (denoted by **`[ ]`**)
+    2. Our inner lists don’t use square brackets **`[ ]`** around the values. This is because they have been converted into [tuples](https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences) (an immutable type of list).
+    
+
+***MODULE 4: LOOPs***
+
+```python
+#random overview
+
+for temp_var in collection:
+  <action>
+while <conditional statement>:
+  <action>
+
+#elegant loop
+
+count = 0
+while count <= 3: print(count); count += 1
+```
+
+- Infinite Loop
+- Loop Control: Break
+    - you can stop iteration from inside the loop by using `break` loop control statement.
+    - DOUBT: if dog_breed == dog_breed_I_want: can we use these variables interchangeably?
+- Loop Control: Continue
+    - skip the current iteration and move to the next iteration
+- List Comprehension: Intro
+    - Python prides itself on allowing programmers to write clean and elegant code.
+    - new_list = [<expression> for <element> in <collection>]
+- List Comprehension: Conditionals
+    - We even can expand our examples to incorporate conditional logic.
+
+***MOULE 5: FUNCTIONS***
+
+- Functions are a convenient way to group our code into reusable blocks. A function contains a sequence of steps that can be performed repeatedly throughout a program without having to repeat the process of writing the same code again.
+- **Defining a Function:**
+    - `def  function_name():`
+    - def is function header.
+    - colon : marks end of function header.
+- **Calling a Function:**
+    - we call a function to execute the code within its body.
+- **Whitespace & Execution Flow**
+    - the amount of whitespace tells the computer what is part of a function and what is not part of that function.
+    - the execution of a program always begins on the first line.
+    - the code is then executed one line at a time from top to bottom, this is known as *execution flow.*
+- **Parameters & Arguments & Multiple Parameters**
+    - make our function a bit more dynamic, we are going to use the concept of function *parameters.*
+    - Function parameters allows our function to accept data as an input value.
+        
+        ```python
+        def my_function(single_parameter)
+        ```
+        
+    - quick breakdown of the distinction between a parameter and an argument:
+        - parameter is the name defined in the parenthesis of the function and can be used in the function body.
+        
+        ![Screen Shot 2022-08-14 at 10.42.52 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/308564eb-080c-4378-801e-c5560d5af678/Screen_Shot_2022-08-14_at_10.42.52_PM.png)
+        
+        - argument is the data that is passed in when we call the function and assigned to the parameter name
+        
+        ![Screen Shot 2022-08-14 at 10.46.25 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d7954ad7-ca7c-4286-b53c-e8a1cca9e256/Screen_Shot_2022-08-14_at_10.46.25_PM.png)
+        
+    - functions let us use as many parameters as we want!
+    - we can pass in more than one input to our functions.
+    - `def my_function(parameter1, parameter2, parameter3):`l hgfds
+    
+- **Types of Arguments**
+    - 3 different types of arguments
+        - Positional arguments: arguments that can be called by their position in the function definition.
+        - Keyword arguments: arguments that can be called by their name.
+        - Default arguments: arguments that are given default values.
+- **Built-in** **Functions vs User Defined Functions**
+    - User defined are the ones that we define using `def function_name():`
+    - Below are few built in functions:
+        - `round()`
+         built-in function takes in two arguments. The first argument is the number we want to round, followed by an argument on how many decimal places we want to round it.
+        `ded_zero = round(10.54, 0)
+        rounded_one = round(10.54, 1)`
+        - `min()`
+         built-in function takes in a series of consecutive arguments and returns the min value.
+        e.g. `min_price = min(4, 1, 5, 9, 6)`
+        - `max()`
+         built-in function takes in a series of consecutive arguments and returns the max value.
+        e.g.
+        e.g. `max_value = max(1, 4, 5, 9, 6)`
+- **Variable Access**
+    - make sure that the scope of variable is correct
+- **Return/Multiple Returns**
+    - Functions can also *return* a value to the program so that this value can be modified or used later.
+    - result from a function that is stored in a variable, it is called a *returned function value*.
+    e.g. `new_zealand_exchange = calculate_exchange_usd(100, 1.4)`
+    - Multiple returns
+        - `return first_day, second_day, third_day`
+        - `monday, tuesday, wednesday = threeday_weather_report(weather_data)`
+- **Python Scope**
+    - **Local Scope**
+        - If we define a variable inside of a function then it is known as a local variable — a variable defined in a *local scope.*
+        - Local variables from one function cannot be accessed outside of that function.
+    - **Global Scope**
+        - Variables are accessible anywhere in a script. These types of variables are referred to as global variables and share what is known as the *global scope.*
+- Remarks:
+    - Avoid contradiction
+    - This occurs when your condition will always be false no matter what value you pass into it
+    - list(range(start,100,3)    i
+    - square   —→ a ** 2 —> x ** y = x to the power y
+    - Note that the math to find the middle index is a bit tricky. In some cases, when we divide by **`2`**
+    , we would get a double. For example, if our list had **`3`**
+     items in it, then **`3/2`**
+     would give us **`1.5`**
+    . The middle index should be **`1`**
+    , so in order to go from **`1.5`**
+    to **`1`**
+    , we cast **`1.5`**
+     as an **`int`**
+    . In total, this is **`int(len(lst)/2)`**
+    - new_list.append("Hello, " + name) we can append  like this  too
+    - for index in range(1, len(lst), 2): remember always to use step/jump count by functionality
+
+ ***MOULE 6: CMD Setup***
+
+- **Bash**
+    - **B**ourne-**A**gain **SH**ell
+    - pwd → print working directory
+    - ls → list
+    - cd → change directory
+    - touch → creates a new file inside the working directory eg touch example.txt
+    - clear → used to clear terminal, which is useful when it’s full of previous commands and outputs.
+- **BASIC GIT WORKFLOW**
+    - Git is a software that allows you to keep track of changes made to a project over time.
+    - Git works by recording the changes you make to a project, storing those changes, then allowing you to reference them as needed.
+    - **git init**
+        - `init` means *initialize*
+        - The command sets up all the tools Git needs to begin tracking changes made to the project
+    - **git Workflow**
+
+***MOULE 7: Strings***
+
+- **Strings are list**:
+    - We can select specific letters from this string using the *index*
+    
+    ```python
+    fav_fruit = “Apple”
+    print(fav_fruit[1])
+    
+    O/P: p
+    ```
+    
+    - indices of strings must be integer.
+    - non-integer index we would get a `TypeError`
+- **Cut Me a Slice of String**
+    - String slicing: `string[first_index:last_index]`
+    - includes the `first_index` and excludes the `last_index`
+    - If we remove the first index, the slice starts at the beginning of the string and if we remove the second index the slice continues to the end of the string.
+    
+    ```python
+    print(favorite_fruit[:4])
+    # Output: blue
+    
+    print (favorite_fruit[4:])
+    # Output: berry
+    ```
+    
+- **Built in functions (5/12)**
+    - len() returns number of characters in a string
+- **Negative Indices (6/12)**
+- **Strings are Immutable (7/12)**
+    - we’ve been selecting characters from strings, slicing strings, and concatenating strings. Each time we perform one of these operations we are creating an entirely new string.
+    - This is because strings are *immutable*. This means that we cannot change a string once it is created.
+    - We can use it to create other strings, but we cannot change the string itself.
+- **Escape Characters  (8/12)**
+    - adding a backslash in front of the special character we want to escape, `\"`
+    - eg. `favorite_fruit_conversation = "He said, \"blueberries are my favorite!\""`
+- **Iterating through Strings (9/12)**
+- **Strings and Conditionals (10/12)**
+    - no need to iterate the string to find a character, we can use `in` for the same
+    - more powerful because it not only works with letters, but with entire strings as well
+
+```python
+eg:  
+for letter in word  *can be used instead of* 
+
+for l in word:
+ if  (l == letter):
+ return True
+```
+
+```python
+def contains(big_string, little_string):
+	if little_string in big_string:
+		return True
+	else:
+		return False
+
+def common_letters(string_one, string_two):
+	letters = []
+	for letter1 in string_one:
+		if letter1 in string_two:
+			if letter1 not in letters:
+				letters.append(letter1)
+	return letters
+
+print(common_letters('manhattan', 'san francisco'))
+
+O/P:
+
+['a', 'n']
+```
+
+- **Review**
+    - String is a list of characters.
+    - A character can be selected from a string using its index `string_name[index]`. These indices start at 0.
+    - A ‘slice’ can be selected from a string. These can be between two indices or can be open-ended, selecting all of the string from a point.
+    - Strings can be concatenated to make larger strings.
+    - `len()` can be used to determine the number of characters in a string.
+    - Strings can be iterated through using `for` loops.
+    - Iterating through strings opens up a huge potential for applications, especially when combined with conditional statements.
+- **String Methods (1/13)**
+    - syntax: `string_name.string_method(argument)`
+    - You can call multiple methods, one after the other in the same statement. This is called “**method chaining**”. it applies each method from left to right
+    
+    ```python
+    words = 'HeLlO WoRlD'.lower().title().split()
+    print(words)
+    ['Hello', 'World']
+    ```
+    
+    - Overview:
+    
+    ![Screen Shot 2022-10-03 at 1.13.27 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/14e11a38-2f75-4e1e-af54-6e5152145971/Screen_Shot_2022-10-03_at_1.13.27_PM.png)
+    
+- **Formatting Methods (2/13)**
+    - To change the case of the string:
+      `.lower()` : returns the string with all lowercase characters.
+    , `.upper()` : returns the string with all uppercase characters.
+    , `.title()` : returns the string in title case, which means the first letter of each word is capitalized.
+    , `string_name.split(delimiter)` : is performed on a string, takes one argument, and returns a list of substrings found between the given argument. If you do not provide an argument for `.split()`  it will default to splitting at spaces. if we run `.split()`on a string with no spaces, we will get the same string in return.
+    when you are providing a  delimiter to the split then we can dictate the character we want our string to be split on.
+    
+    ```python
+    eg:  
+    greatest_guitarist = "santana”
+    print(greatest_guitarist.split('a'))
+    # => ['s', 'nt', 'n', '']
+    ```
+    
+    - When you split a string on a character that it also ends with, you’ll end up with an empty string at the end of the list.
+    - string methods can only **create** new strings, they do not change the original string.
+    - string methods are great for sanitizing user input and standardizing the formatting of your strings.
+- **Splitting Strings III (5/13)**
+    - We can also split strings using *escape sequences.*
+    - Escape sequences are used to indicate that we want to split by something in a string that is not necessarily a character.
+    - The two escape sequences we will cover here are:
+    `\n` Newline : will allow us to split a multi-line string by line breaks.
+        
+        `\t` Horizontal Tab : will allow us to split a string by tabs. It is particularly useful when dealing with certain datasets because it is not uncommon for data points to be separated by tabs.
+        
+    - 
+    
+    ```python
+    smooth_chorus = \
+    """And if you said, "This life ain't good enough."
+        I would give my world to lift you up
+        I could change my life to better suit your mood
+        Because you're so smooth"""
+    
+    chorus_lines = smooth_chorus.split('\n')
+    
+    print(chorus_lines)
+    
+    ['And if you said, "This life ain\'t good enough."', 'I would give my world to lift you up', 'I could change my life to better suit your mood', "Because you're so smooth"]
+    ```
+    
+- **Joining Strings(6/13)&(7/13)**
+    - `.join()` :  is essentially the opposite of `.split()`  it *joins* a list of strings together with a given delimiter.
+    - Syntax: `'delimiter'.join(list_you_want_to_join)` .
+    - You can use any string as a delimiter to join together a list of strings.
+    - You can also join using *escape sequences* as the delimiter.
+- **.strip() (8/13)**
+    - Stripping a string removes all whitespace characters from the beginning and end.
+    - The whitespace in the middle has been preserved.
+    - You can also use `.strip()` with a character argument, which will strip that character from either end of the string.
+    - Notice that now that we’ve included an argument we are no longer stripping whitespace, we are ONLY stripping the argument.
+- **Replace (9/13)**
+    - `.replace(arg1 , arg2)`  : takes two arguments and replaces all instances of the first argument in a string with the second argument.
+    - `string_name.replace(substring_being_replaced, new_substring)`
+- **.find() (10/13)**
+    - Takes a string as an argument and searching the string it was run on for that string.
+    - It then returns the first *index value* where that string is located.
+    - You can also search for larger strings.
+    
+    ```python
+    eg: 
+    print('smooth'.find('t'))
+    # => '4'
+    print("smooth".find('oo'))
+    # => '2'
+    ```
+    
+- **.format() and *.format() II (11/13) & (12/13)***
+    - `.format()` : takes variables as an argument and includes them in the string that it is run on.
+    - Handy string method for including variables in strings.
+    - You include `{}` marks as placeholders for where those variables will be imported.
+    - Can take as many arguments as there are `{}` in the string it is run on.
+    - eg:
+    
+    ```python
+    def favorite_song_statement(song, artist):
+    	return "My favorite song is {} by {}.".format(song, artist)
+    
+    print(favorite_song_statement("Smooth", "Santana"))
+    # => "My favorite song is Smooth by Santana."
+    ```
+    
+    - Can be made even more legible for other people reading your code by including *keywords.*
+    - You had to make sure that your variables appeared as arguments in the same order that you wanted them to appear in the string, which added unnecessary complications when writing code. By including keywords in the string, and in the arguments, you can remove that ambiguity.
+    - eg:
+    
+    ```python
+    def favorite_song_statement(song, artist):
+    	return "My favorite song is {song} by {artist}.".format(song=song, artist=artist)
+    ```
+    
+- **Review:**
+    - `.upper()`, `.title()`, and `.lower()` adjust the casing of your string.
+    - `.split()` takes a string and ***creates a list*** of substrings.
+    - `.join()` takes a list of strings and ***creates a string***.
+    - `.strip()` cleans off whitespace, or other noise from the beginning and end of a string.
+    - `.replace()` replaces all instances of a character/string in a string with another character/string.
+    - `.find()` searches a string for a character/string and returns the index value that character/string is found at.
+    - `.format()` allows you to interpolate a string with variables.
+
+***MOULE 8: Modules***
+
+- **Introduction (1/6)**
+    - We’ll explore how to use tools other people have built in Python that are not included automatically for you when you install Python. Python allows us to package code into files or sets of files called *modules*.
+    - Modules are also often referred to as “libraries” or “packages” — a package is really a directory that holds a collection of modules.
+    - Syntax: `from module_name import object_name`
+    - Often, a library will include a lot of code that you don’t need that may slow down your program or conflict with existing code. Because of this, it makes sense to only import what you need.
+    - Multiple functions in a file is a module (needs to be in same directory as the program)
+    Multiple modules in a folder is a package
+    Collection of packages  is a library
+- “***Random*” as a Python Module (2/6)**
+    - `random` : allows you to generate numbers or select items at random.
+    - `random.choice()` : which takes a ***list*** ***as an argument*** and returns a number from the list 
+    eg: randomer_number = random.choice(random_list)
+    - `random.randint()` : which takes ***two numbers as arguments*** and generates a random number between the two numbers you passed in. (`random.randint`
+     is inclusive while `range()`is not.)
+    eg: random_list = [random.randint(1,100) for i in range(101)]
+    - `random.sample()` : takes a ***range and a number as its arguments***. It will return the specified number of random numbers from that range.
+    syntax: `new_list = random.sample(list, k)` : takes a list and randomly selects k items from it
+    eg: sample_nums = random.sample(nums, 3)
+- **Modules Python Namespaces (3/6)**
+    - (As per my understanding )
+    - You  can change long and complex module name by using `as`
+    - Syntax: `import module_name as name_you_pick_for_the_module`
+    - Aliasing is most often done if the name of the library is long and typing the full name every time you want to use one of its functions is laborious.
+    - `import *`: “wildcard”, syntax is considered dangerous because it could *pollute* our local namespace. Pollution occurs when the same name could apply to two possible things.
+    - `matplotlib` library: allows you to plot your Python code in 2D.
+    - Syntax: `from *module_name* import *object_name* as *name_you_pick*`
+- **Modules Python Decimals (4/6)**
+    - To use a data type that performs decimal arithmetic more accurately because of rounding errors in floating-point arithmetic.
+    - `from decimal import Decimal` from decimal module we used Decimal as data type
+    
+    ```python
+    eg: 
+    # Import Decimal below:
+    from decimal import Decimal
+    
+    # Fix the floating point math below:
+    two_decimal_points = Decimal('0.2') + Decimal('0.69')
+    print(two_decimal_points)
+    
+    four_decimal_points = Decimal('0.53') * Decimal('0.65')
+    print(four_decimal_points)
+    
+    Output:
+    0.89
+    0.3445
+    ```
+    
+- **Modules Python Files and Scope**
+    - Even files inside the *same directory* do not have access to each other’s variables, functions, classes, or any other code. So if I have a file **sandwiches.py** and another file **hungry_people.py**, how do I give my hungry people access to all the sandwiches I defined? By using import statement.
+    `from sandwiches import sandwiches`
+     at the top of **hungry_people.py**, the hungry people will have all the sandwiches they could ever want.
+    - ***Files are actually modules***
+- **Review**
+    - Using a package manager (like conda or pip3), you can install any modules available on the Python Package Index
+- Video
+    - Datetime Module
+        - strptime()
+        - strftime()
+    - Creating date using year, month, day as agrgument
+        - birthday = datetime(year, month, date, hour, min, sec)
+        - birthday.year (to get year)
+    - Creating using datetime.now()
+        - we can do subtraction on dates (you cannot add, divide or multiply)
+        - datetime(2018, 1, 1) - datetime(2017, 1, 1)
+        - we will get the days of different between the given dates
+    - strptime()
+        - Google: Python3 datetime
+        - ‘JAN 15, 2018’ —> Python is smart enough to convert it into date
+        - parsed_data = datetime.strptime(’Jan 15, 2018’, ‘%b %d, %Y’) we told python the format of date and time
+            - parsed_data.month —> O/p: 1
+    - strftime()
+        - f is for format
+        - date_string = datetime.strftime(datetime.now(), ‘%b %d, %Y’)
+        
+        ![Screen Shot 2022-10-05 at 5.30.44 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b242631d-4f3d-4406-8318-34a980fc5469/Screen_Shot_2022-10-05_at_5.30.44_PM.png)
+        
+
+***MOULE 9: Dictionaries
+
+PART 1: Creating dictionaries***
+
+- **Inro (1/9)&(4/9)**
+    - A *dictionary* is an unordered set of `key: value` pairs.
+    - eg. `menu = {"avocado toast": 6, "carrot juice": 5, "blueberry muffin": 2}`
+        - A dictionary begins and ends with curly braces `{` and `}`.
+        - Each item consists of a key (`"avocado toast"`) and a value (`6`).
+        - Each `key: value` pair is separated by a comma.
+    - Empty dictionary : empty_dictionary  = {}
+- **Make a dictionary (2/9)**
+    - Values can be of any type. We can use a string, a number, a list, or even another dictionary as the value associated with a key!
+    - eg: `students_in_classes = {"software design": ["Aaron", "Delila", "Samson"], "cartography": ["Christopher", "Juan", "Marco"], "philosophy": ["Frederica", "Manuel"]}`
+- **Invalid Keys (3/9)**
+    - Dictionaries in Python rely on each key having a *hash value*, a specific identifier for the key. If the key can change, that hash value would not be reliable. So the keys must always be unchangeable, hashable data types, like numbers or strings.
+    - Hence a list cannot be a key
+- **Add a Key (5/9)**
+    - To add single key: value pair —> `dictionary[key] = value`
+- **Add Multiple Keys (6/9)**
+    - If we wanted to add multiple key : value pairs to a dictionary at once, we can use the `.update()` method.
+- **Overwrite Values (7/9)**
+    - value assignment would overwrite the existing value attached to that key. We can overwrite the value of `"oatmeal"` like this:
+    
+    ```python
+    menu = {"oatmeal": 3, "avocado toast": 6, "carrot juice": 5, "blueberry muffin": 2}
+    menu["oatmeal"] = 5
+    print(menu)
+    O/P:
+    {"oatmeal": 5, "avocado toast": 6, "carrot juice": 5, "blueberry muffin": 2}
+    ```
+    
+- **Dict Comprehensions (8/9)**
+    - we have two lists that we want to combine into a dictionary.
+    - Python allows you to create a dictionary using a dict comprehension, with this syntax:
+    
+    ```python
+    names = ['Jenny', 'Alexus', 'Sam', 'Grace']
+    heights = [61, 70, 67, 64]
+    students = {key:value for key, value in zip(names, heights)}
+    #students is now {'Jenny': 61, 'Alexus': 70, 'Sam': 67, 'Grace': 64}
+    
+    ```
+    
+    - `zip()` combines two lists into an iterator of tuples with the list elements paired together. This dict comprehension:
+        1. Takes a pair from the iterator of tuples
+        2. Names the elements in the pair `key` (the one originally from the `names` list) and `value` (the one originally from the `heights` list)
+        3. Creates a `key` : `value` item in the `students` dictionary
+        4. Repeats steps 1-3 for the entire iterator of pairs
+
+***PART 2: Using dictionaries***
+
+- **Get A Key (2/20)**
+    - use a key to access values in dictionaries
+    - eg: `building_heights["Burj Khalifa"]`
+- **Get an Invalid Key (3/10)**
+    - you get a KeyError if you try to access an invalid Key
+    - One way to avoid this error is to first check if the key exists in the dictionary:
+    
+    ```python
+    key_to_check = "Landmark 81"
+    
+    if key_to_check in building_heights:
+      print(building_heights["Landmark 81"])
+    ```
+    
+- **Try/Except to Get a Key (4/10)**
+    - When we try to access a key that doesn’t exist, the program will go into the `except` block and print `"That key doesn't exist!"`
+    
+    ```python
+    key_to_check = "Landmark 81"
+    try:
+    print(building_heights[key_to_check])
+    except KeyError:    
+    print("That key doesn't exist!")
+    ```
+    
+- **Safely Get a Key (5/10)**
+    - Dictionaries have a `.get()` method to search for a value instead of the `my_dict[key]` notation we have been using.
+    - returns None when key doesn't exist
+    - You can also specify a value to return if the key doesn’t exist.
+    eg: `building_heights.get('Shanghai Tower', 0)` returns building height as 0 if building not present
+- **Delete a Key (6/10)(7/10)**
+    - `.pop()` to remove any key:value pair from the dictionary
+    - `.pop()` works to delete items from a dictionary, when you know the key value.
+    - we can provide a default value to return if the key does not exist in the dictionary
+    eg: raffle.pop(320291, "No Prize")
+    health_points += available_items.pop("stamina grains", 0)
+    - to delete all keys
+        - we want to create a list of all  the keys then we can use **`list()`** function
+        
+        ```python
+        list(test_scores)
+        ["Grace", "Jeffrey", "Sylvia", "Pedro", "Martin", "Dina"]
+        ```
+        
+        - `.keys()` method that returns a `dict_keys` ***object***, will return set of the keys in the dictionary
+        - A `dict_keys` object is a *view* object, which provides a look at the current state of the dictionary, without the user being able to modify anything.
+        - You cannot add or remove elements from a `dict_keys` object, but it can be used in the place of a list for iteration:
+        
+        ```python
+        eg: 
+        test_scores = {"Grace":[80, 72, 90], "Jeffrey":[88, 68, 81], "Sylvia":[80, 82, 84], "Pedro":[98, 96, 95], "Martin":[78, 80, 78], "Dina":[64, 60, 75]}
+        for student in test_scores.keys():
+          print(student)
+        O/P:
+        Grace
+        Jeffrey
+        Sylvia
+        Pedro
+        Martin
+        Dina
+        
+        ```
+        
+- **Get All Values (8/10)**
+    - `.values()` method that returns a `dict_values`
+    - There is no built-in function to get all of the values as a list, but if you *really* want to, you can use: (unlike for keys you can use list(dictionary_name) to get the list of keys)
+    
+    ```python
+    list(test_scores.values())
+    
+    ```
+    
+- **Get All Items (9/10)**
+    - You can get both the keys and the values with the `.items()`
+    - `.keys()` and `.values()`, it returns a `dict_list` object
+    - Each element of the `dict_list` returned by `.items()` is a tuple consisting of:
+    
+    ```
+    (key, value)
+    ```
+    
+    ```python
+    to iterate through, you can use this syntax:
+    
+    biggest_brands = {"Apple": 184, "Google": 141.7, "Microsoft": 80, "Coca-Cola": 69.7, "Amazon": 64.8}
+    for company, value in biggest_brands.items():
+      print(company + " has a value of " + str(value) + " billion dollars. ")
+    ```
+    
+- Review:
+    - Use a key to get a value from a dictionary
+    - Check for existence of keys
+    - Remove a key: value pair from a dictionary
+    - Iterate through keys and values in dictionaries
+    - accessing items from a dictionary
+    - 
+    
+    ```python
+    thisdict = { "brand": "Ford",
+    
+    							"model": "Mustang",
+    
+    							"year": 1964
+    						}
+    
+    x = thisdict["model"]
+    
+    #Mustang
+    # for same we can also use:
+    
+    ```
+    
+    - We start by using **`float("-inf")`** in order to initialize them to the lowest possible value.
+
+***MOULE 10: FILES***
+
+- **Reading a File (1/13)**
+    - Files - used to store and retrieve data
+    - we can open a file as below:
+    - .read() grabs the whole document in a sungle line
+    
+    ```python
+    with open(file_name.py) as file_object_name:
+    	var2 = file_object_name.read()
+    print(var2)
+    ```
+    
+- **Iterating Through Lines(2/13)**
+    - readlines() - lets you read the document line by line instead of having a whole document
+    
+    ```python
+    var2 = vaariable.readlines()
+    ```
+    
+- **Reading a Line (3/13)**
+    - readline() - will just read a single line at a time and not read the whole document
+    - If the entire document is read line by line in this way subsequent calls to `.readline()` will not throw an error but will start returning an empty string (`""`)
+- **Writing a File (4/13)**
+    - open(’file_name_to_open’, ‘w’)
+    - we add ‘w’ to open the file in write mode
+    - default argument os ‘r’: read-mode
+    - following file opens a file in same folder as the current file
+    
+    ```python
+    with open('generated_file.txt', 'w') as gen_file:
+      gen_file.write("What an incredible file!")
+    ```
+    
+- **Appending to a File (5/13)**
+    - if we open a file in append-mode instead of write mode then we can append in a file
+    - eg:
+    
+    ```python
+    #generated_file.txt
+    #This was a popular file...
+    
+    with open('generated_file.txt', 'a') as gen_file:
+      gen_file.write("\n... and it still is")
+    
+    #newline character \n moves to the next line before adding the rest of the string
+    
+    OUTPUT:
+    This was a popular file...
+    ... and it still is
+    ```
+    
+- **What's With "with"? (6/13)**
+    - The `with` keyword invokes something called a *context manager* for the file that we’re calling [`open()`](https://www.codecademy.com/resources/docs/python/built-in-functions/open) on. This context manager takes care of opening the file when we call `open()` and then closing the file after we leave the indented block.
+    - Since your files exist *outside* your Python script, we need to tell Python when we’re done with them so that it can close the connection to that file.
+    - Leaving a file connection open unnecessarily can affect performance or impact other programs on your computer that might be trying to access that file.
+    - The `with` syntax replaces older ways to access files where you need to call [`.close()`](https://www.codecademy.com/resources/docs/python/files/close?page_ref=catalog) on the file object manually.
+- **What Is a CSV File? (7/13)**
+    - Text files aren’t the only thing that Python can read, but they’re the only thing that we don’t need any additional parsing library to understand.
+    - [CSV](https://www.codecademy.com/resources/docs/general/csv?page_ref=catalog) files are an example of a text file that impose a structure to their data
+    - CSV stands for *Comma-Separated Values* and CSV files are usually the way that data from spreadsheet software (like Microsoft Excel or Google Sheets) is exported into a portable format.
+    - In a CSV file that same exact data would be rendered like this:
+    
+    ```python
+    users.csv
+    
+    Name,Username,Email
+    Roger Smith,rsmith,wigginsryan@yahoo.com
+    Michelle Beck,mlbeck,hcosta@hotmail.com
+    Ashley Barker,a_bark_x,a_bark_x@turner.com
+    Lynn Gonzales,goodmanjames,lynniegonz@hotmail.com
+    Jennifer Chase,chasej,jchase@ramirez.com
+    Charles Hoover,choover,choover89@yahoo.com
+    Adrian Evans,adevans,adevans98@yahoo.com
+    Susan Walter,susan82,swilliams@yahoo.com
+    Stephanie King,stephanieking,sking@morris-tyler.com
+    Erika Miller,jessica32,ejmiller79@yahoo.com
+    ```
+    
+    - Notice that the first row of the CSV file doesn’t actually represent any data, just the labels of the data that’s present in the rest of the file.
+    - comma separated
+- **Reading a CSV File (8/13)**
+    - In Python we can convert that data into a dictionary using the `csv` library’s `DictReader` object.
+    - Here’s how we’d create a list of the email addresses of all of the users in the above table:
+    
+    ```python
+    import csv
+    
+    list_of_email_addresses = []
+    with open('users.csv', newline='') as users_csv:
+      user_reader = csv.DictReader(users_csv)
+      for row in user_reader:
+        list_of_email_addresses.append(row['Email'])
+    ```
+    
+    - We pass the additional keyword argument `newline=''` to the file opening [`open()`](https://www.codecademy.com/resources/docs/python/built-in-functions/open) function so that we don’t accidentally mistake a line break in one of our data fields as a new row in our CSV.
+    - `csv.DictReader(users_csv)` which converts the lines of our CSV file to Python [dictionaries](https://www.codecademy.com/resources/docs/python/dictionaries) which we can use access methods for.
+    - The keys of the dictionary are, by default, the entries in the first line of our CSV file.
+- **Reading Different Types of CSV Files (9/13)**
+    - different *delimiters* (like a comma or tab) to indicate where the different values start and stop
+    
+    ```python
+    addresses.csv
+    
+    Name;Address;Telephone
+    Donna Smith;126 Orr Corner Suite 857\nEast Michael, LA 54411;906-918-6560
+    Aaron Osborn;6965 Miller Station Suite 485\nNorth Michelle, KS 64364;815.039.3661x42816
+    Jennifer Barnett;8749 Alicia Vista Apt. 288\nLake Victoriaberg, TN 51094;397-796-4842x451
+    Joshua Bryan;20116 Stephanie Stravenue\nWhitneytown, IA 87358;(380)074-6173
+    Andrea Jones;558 Melissa Keys Apt. 588\nNorth Teresahaven, WA 63411;+57(8)7795396386
+    Victor Williams;725 Gloria Views Suite 628\nEast Scott, IN 38095;768.708.3411x954
+    ```
+    
+    - Notice the `\n` character. The possibility of a new line escaped by a `\n` character in our data is why we pass the `newline=''` keyword argument to the [`open()`](https://www.codecademy.com/resources/docs/python/built-in-functions/open) function.
+    
+    ```python
+    import csv
+    
+    with open('addresses.csv', newline='') as addresses_csv:
+      address_reader = csv.DictReader(addresses_csv, delimiter=';')
+      for row in address_reader:
+        print(row['Address'])
+    ```
+    
+    - `elimiter` parameter, which is the string that’s used to delineate separate fields in the CSV
+- **Writing a CSV File (10/13)**
+    - 
+    
+    ```python
+    big_list = [{'name': 'Fredrick Stein', 'userid': 6712359021, 'is_admin': False}, {'name': 'Wiltmore Denis', 'userid': 2525942, 'is_admin': False}, {'name': 'Greely Plonk', 'userid': 15890235, 'is_admin': False}, {'name': 'Dendris Stulo', 'userid': 572189563, 'is_admin': True}] 
+    
+    import csv
+    
+    with open('output.csv', 'w') as output_csv:
+      fields = ['name', 'userid', 'is_admin']
+      output_writer = csv.DictWriter(output_csv, fieldnames=fields)
+    
+      output_writer.writeheader()
+      for item in big_list:
+        output_writer.writerow(item)
+    ```
+    
+    - `.writeheader()` on the writer object writes all the fields passed to `fieldnames` as the first row in our file.
+    - `output_writer.writerow()` with the `item` dictionaries writes each line to the CSV file.
+- **Reading and Writing a JSON file (11,12/13)**
+    - 
+    
+    ```python
+    READ
+    import json
+    
+    with open('purchase_14781239.json') as purchase_json:
+      purchase_data = json.load(purchase_json)
+    
+    print(purchase_data['user'])
+    # Prints 'ellen_greg'
+    
+    WRITE
+    ```
+    
+- **Review (13/13)**
+
+***MOULE 10: Object Oriented Programming***
+
+***PART 1: What  are classes and  objects***
+
+- Custom data types.
+- Class: tells what the new data type  looks like and what is it  made of.
+- Class names are always capitalized.
+- eg: 
+we can also develop functions around an object
+student is an instance of a class
+    
+    ![Screen Shot 2022-11-21 at 11.38.14 AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a2fdc4e2-2a04-421f-b174-98a08c20087b/Screen_Shot_2022-11-21_at_11.38.14_AM.png)
+    
+    ![Multiple Instances of a class](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/320496d3-d32a-44e4-bfa4-dd23c3b0bde5/Screen_Shot_2022-11-21_at_11.47.35_AM.png)
+    
+    Multiple Instances of a class
+    
+    ![You can create object for anything and everything](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c885650f-d232-4a25-824f-0423fab773a8/Screen_Shot_2022-11-21_at_11.50.25_AM.png)
+    
+    You can create object for anything and everything
+    
+
+***Turning a real-world concept into a class***
+
+- Designing a class
+    - A **class** is made up of attributes and methods (sometimes known as functions).
+        - An **attribute** can be thought of as something a class *has*. These are often nouns or adjectives.
+        - A **method** can be thought of as something a class can *do*. These are often verbs.
+        - eg: 
+        attribute - what a dog  is
+        method - what a  dog can do
+        - By using the “self” we can access the attributes and methods of the class in python.
+        - Self binds the attributes with the given arguments.
+        - **`self`** refers to a specific instance of a dog. (object)
+        - Using **`self`** as a parameter means that the method will be referring to the specific dog we attach the method to.
+        - **`__init__`** method. This method, which we call the *constructor*, defines  who our dog will be when first created!
+        - A **`__repr__()`** method will print out all of an Object’s attributes in a readable way.
+
+***PART 2: Creating Dog Class***
+
+```python
+class Dog:
+  def __init__(self, input_name, input_breed, input_age = 0, input_friendliness=True):
+    self.name = input_name
+    self.breed = input_breed
+    self.age = input_age
+    self.is_friendly = input_friendliness
+    self.friends = []
+#self will equal this specific dog
+# other_dog will be an argument we pass in
+	def become_friends(self, other_dog):
+	  if(other_dog.is_friendly):
+    # If the other dog is friendly,
+    # it adds other_dog to its friends
+	    self.friends.append(other_dog)
+    # The other dog also adds this 
+    # specific dog to its friends
+	    other_dog.friends.append(self)
+	    print("{name} become friends with {other_name}!".format(name = self.name, other_name = other_dog.name))
+  else:
+    # If the other dog is NOT friendly,
+    # no one becomes friends.
+    print("{other_name} did not want to become friends with {name}!".format(name = self.name, other_name = other_dog.name))
+dog_one = Dog("Sparky", "Golden Retriever", 5)
+dog_two = Dog("Bruno", "Chihuahua", 10, False)
+ 
+# When Sparky asks Bruno, Bruno says no.
+dog_one.become_friends(dog_two)
+# Output: "Bruno did not want to become friends with Sparky!"
+
+#__repr__
+	def __repr__(self):
+    # Printing a Dog will tell you its name, its breed, its age, if it's friendly, and how many friends it has.
+	    description = "This {breed} named {name} is {age} years old and has {number_of_friends} friends.".format(breed = self.breed, name = self.name, age=self.age, number_of_friends=len(self.friends))
+	    if self.is_friendly:
+	      description += " {name} is a friendly dog.".format(name = self.name)
+	    else:
+	      description += " {name} is an unfriendly dog.".format(name = self.name)
+	    return description
+dog_one = Dog("Sparky", "Golden Retriever", 5)
+dog_two = Dog("Bruno", "Chihuahua", 10, False)
+ 
+print(dog_one)
+# Output: "This Golden Retriever named Sparky is 5 years old and has 0 friends. Sparky is a friendly dog."
+print(dog_two)
+# Output: "This Chihuahua named Bruno is 10 years old and has 0 friends. Bruno is an unfriendly dog."
+
+	def have_birthday(self):
+    self.age = self.age + 1
+    print("{name} had a birthday! {name} is {age} years old.".format(name = self.name, age = self.age))
+
+dog_one.have_birthday()
+```
+
+***PART 3: Introduction to Classes***
+
+- **Types (1/14)**
+    - `type()` function used to check the python variables for its data type.
+    - A variable’s type determines what you can do with it and how you can use it.
+- **Class (2/14)**
+    - A *class* is a template for a data type. It describes the kinds of information that class will hold and how a programmer will interact with that data.
+    - Capitalizing the names of classes to make them easier to identify. 
+    `class ClassName:`
+         `pass`
+    - `pass` keyword: indicate that the body of the class was intentionally left blank so we don’t cause an `IndentationError`
+- **Instantiation (3/14)**
+    - A class must be *instantiated*. In other words, we must create an *instance* of the class, in order to breathe life into the schematic.
+    - In Python `__main__` means “this current file that we’re running”
+    `cool_instance = CoolClass()`
+- **Class Variables (5/14)**
+    - When we want the same data to be available to every instance of a class we use a *class variable*.
+    - class variable is a variable that’s the same for every instance of the class.
+    - You can define a class variable by including it in the indented part of your class definition, and you can access all of an object’s class [variables](https://www.codecademy.com/resources/docs/python/variables) with `object.variable` syntax.
+    - **NOTE**: Class variables are often referenced with a leading period, like `.title` above. This is done to quickly show that the variable belongs to a class and must be accessed with dot notation, like `drummer.title`.
+    
+    ```python
+    class Musician:
+      title = "Rockstar"
+    
+    drummer = Musician()
+    print(drummer.title)
+    # prints "Rockstar"
+    ```
+    
+- **Methods (6/14)**
+    - The first argument in a method is always the object that is calling the method.
+    - Convention recommends that we name this first argument `self`. Methods always have at least this one argument.
+    - When you call a method it automatically passes the object calling the method as the first argument.
+    - `self`, which refers to the object calling the function.
+- **Constructors (8/14)**
+    - Several methods that we can define in a Python class that have special behavior.
+    - Sometimes called “magic,” because they behave differently from regular methods.
+    - Another popular term is ”*dunder methods”*, so-named because they have two underscores (double-underscore abbreviated to “dunder”) on either side of them.
+    - first dunder method we’re going to use is the `__init__()` method
+    - This method is used to ***initialize* a newly created object.** It is called every time the class is instantiated.
+    - ***Methods that are used to prepare an object being instantiated are called constructors.***
+    - Pay careful attention to the instantiation syntax we use. `Shouter()` looks a lot like a function call, doesn’t it? If it’s a function, can we pass parameters to it? We absolutely can, and those parameters will be received by the `__init__()` method.
+    
+    ```python
+    class Shouter:
+      def __init__(self, phrase):
+        # make sure phrase is a string
+        if type(phrase) == str:
+    
+          # then shout it out
+          print(phrase.upper())
+    
+    shout1 = Shouter("shout")
+    # prints "SHOUT"
+    
+    shout2 = Shouter("shout")
+    # prints "SHOUT"
+    
+    shout3 = Shouter("let it all out")
+    # prints "LET IT ALL OUT"
+    ```
+    
+- **Attribute Functions (9/14)**
+    - Instance variables (objects) and class variables are both accessed similarly in Python.
+    - They are both considered *attributes* of an object.
+    - If we attempt to access an attribute that is neither a class variable nor an instance variable of the object Python will throw an `AttributeError` .
+    - What if we aren’t sure if an object has an attribute or not? `hasattr()` will return `True`  if an object has a given attribute and `False`
+     otherwise.
+    - `hasattr(object, “attribute”)` has two parameters:
+        - *object* : the object we are testing to see if it has a certain attribute
+        - *attribute* : name of attribute we want to see if it exists
+    - `getattr(object, “attribute”, default)` has three parameters (one of which is optional):
+        - *object* : the object whose attribute we want to evaluate
+        - *attribute* : name of attribute we want to evaluate
+        - *default* : the value that is returned if the attribute does not exist (note: this parameter is **optional**)
+    - eg.
+    
+    ```python
+    class NoCustomAttributes:
+      pass
+     
+    attributeless = NoCustomAttributes()
+     
+    try:
+      attributeless.fake_attribute
+    except AttributeError:
+      print("This text gets printed!")
+     
+    # prints "This text gets printed!"
+    
+    hasattr(attributeless, "fake_attribute")
+    # returns False
+     
+    getattr(attributeless, "other_fake_attribute", 800)
+    # returns 800, the default value
+    ```
+    
+    - dictionaries and integers both *do not have* a `count` attribute, while strings and lists do.
+- **Self (11/14)**
+    - `self` keyword refers to the object and not the class being called.
+- **Everything is an Object (12/14)**
+    - use the `dir()` function to investigate an object’s attributes at runtime. `dir()` is short for *directory* and offers an organized presentation of object attributes.
+    - syntax: `dir(object_name)`
+    - Functions are objects too.
+    - Python automatically adds a number of attributes to all objects that get created. These internal attributes are usually indicated by double-underscores
+- **String Representation (13/14)**
+    - Another dunder method called `__repr__()`. This is a method we can use to tell Python what we want the *string representation* of the class to be. `__repr__()` can only have one parameter, `self`, and must return a string.
+    - 
+    
+    ```python
+    class Circle:
+      pi = 3.14
+      
+      def __init__(self, diameter):
+        self.radius = diameter / 2
+      
+      def __repr__(self):
+        return "Circle with radius {radius}".format(radius = self.radius)
+      
+      def area(self):
+        return self.pi * self.radius ** 2
+      
+      def circumference(self):
+        return self.pi * 2 * self.radius
+      
+      
+      
+    medium_pizza = Circle(12)
+    teaching_table = Circle(36)
+    round_room = Circle(11460)
+    
+    print(medium_pizza)
+    print(round_room)
+    print(teaching_table)
+    ```
+    
+- **Exam**
+    - Problem 1:
+    
+    ```python
+    # All of our store items
+    all_items = [["Taffy", 1], ["Chocolate", 2], ["Cup", 5], ["Plate", 10], ["Bowl", 11], ["Silverware", 22]]
+    
+    # Empty discounted_items list
+    discounted_items = []
+    
+    # Your code here
+    for item in all_items:
+      if item[1] % 2 != 0:
+        discounted_items.append(item[0])
+    
+    # For testing purposes: print discounted list
+    print(discounted_items)
+    ```
+    
+    - Problem 2:
+    
+    ```python
+    starting_money = 100
+    starting_num_items = 10
+    item_price = 4
+    
+    # Your code here
+    def buy_items(money, num_items, price_each):
+      num_bought = 0
+      while num_items > 0 and money >= 4:
+        num_bought +=1
+        money = money-4
+        num_items = num_items-1
+    
+      return num_bought
+    
+    total = buy_items(starting_money, starting_num_items, item_price)
+    print("You were able to buy " + str(total) + " items.")
+      
+    # For testing purposes
+    total_1 = buy_items(100, 10, 4)
+    print("Test 1: " + str(total_1))
+    total_2 = buy_items(10, 10, 4)
+    print("Test 2: " + str(total_2))
+    ```
+    
+    - Problem 4
+    
+    ```python
+    class HashtagsCreator:
+      
+      def __init__(self,list_of_terms):
+        self.hashtags = []
+        for term in list_of_terms:
+          # Fix this section of code
+          if term[0] == "#" or term[0] == "@":
+            #print("before---->" + term)
+            term = term[1:]
+            #print("after---->" + term)
+            self.hashtags.append("#" + term)
+          else:
+            self.hashtags.append("#" + term)
+          
+      def list_hashtags(self):
+        for hashtag in self.hashtags:
+          print(hashtag)
+    
+    # Do not edit testing code
+    test_hashtags = HashtagsCreator(["@codecademy", "#python", "programming", "#strings"])
+    test_hashtags.list_hashtags()
+    ```
+    
+    - Problem 5
+    
+    ```python
+    # Import random class
+    import random
+    
+    class Number_Guesser:
+      
+      def __init__(self, player_names):
+        self.player_guesses = {}
+        self.names = player_names
+        # Adds names and -1 to player_guesses
+        for name in player_names:
+          self.player_guesses[name] = -1
+          
+        # Update to choose a random number
+        self.secret_number = random.randint(1, 10)
+    
+      def add_player_guess(self, name, guess):
+        # Fill in this method
+        if name in self.names:
+          self.player_guesses[name] = guess
+      
+      def print_answer(self):
+        print(str(self.secret_number), "is the secret number!")
+        
+      def print_guesses(self):
+        for player in self.player_guesses.items():
+          if player[1] != -1:
+            print(player[0], "guessed", str(player[1]))
+          else:
+            print(player[0], "needs to guess!") 
+    
+    game1 = Number_Guesser(["Thuy", "Joe", "Diya"])
+    game1.add_player_guess("Roger", 10)
+    game1.add_player_guess("Diya", 8)
+    game1.add_player_guess("Thuy", 1)
+    game1.add_player_guess("Joe", 5)
+    game1.print_guesses()
+    game1.print_answer()
+    ```
+    
+    - Problem 6
+    
+    ```python
+    # Fill in your code below
+    import csv
+    
+    list_phone_numbers = []
+    list_names = []
+    
+    with open('employees.csv', newline='') as emp:
+      emp_reader = csv.DictReader(emp)
+      for row in emp_reader:
+        print(row['Name'] + ": " + row['Phone Number'])
+        #print(list_names.append(row['Name'] + ": " + list_phone_numbers.append(row['Phone Number']))
+    ```
+    
+    EXTRA:
+    
+    - **SETS (W3 Schools)**
+        - Set items are unordered, unchangeable, and do not allow duplicate values.
+        - Sets cannot have two items with the same value.
+        - Set items are unchangeable, meaning that we cannot change the items after the set has been created.
+        - Unordered means that the items in a set do not have a defined order.
+        - Set items can appear in a different order every time you use them, and cannot be referred to by index or key.
+        - `True` and `1` is considered the same value.
+        - To determine how many items a set has, use the `len()` function.
+        - Set items can be of any data type.
+        - Sets are defined as objects with the data type 'set’
+        - 
+        
+        [Data Structures in Python: set()](https://dev.to/hurayraiit/data-structures-in-python-set-54b2)
+        
+    
+    - **all() Function**
+        - returns True if all items in an iterable are true, otherwise it returns False.
+        - If the iterable object is empty, the `all()` function also returns True.
+            
+            
+            | Parameter | Description |
+            | --- | --- |
+            | *iterable* | An iterable object (list, tuple, dictionary) |
+        -
